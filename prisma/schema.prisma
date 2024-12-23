@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  User              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Course {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  slug        String   @unique
+  authorId    String
+  published   Boolean  @default(false)
+  thumbnail   String
+  User        User     @relation(fields: [authorId], references: [id])
+  Lesson      Lesson[]
+}
+
+model Lesson {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  description        String
+  slug               String               @unique
+  courseId           Int
+  Course             Course               @relation(fields: [courseId], references: [id])
+  UserLessonProgress UserLessonProgress[]
+  Video              Video?
+}
+
+model Session {
+  id           String   @id
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  User         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                 String               @id @default(cuid())
+  name               String?
+  email              String?              @unique
+  emailVerified      DateTime?
+  image              String?
+  password           String?
+  role               Role                 @default(USER)
+  blockedstatus        Boolean              @default(false)
+  Account            Account[]
+  Course             Course[]
+  Session            Session[]
+  UserLessonProgress UserLessonProgress[]
+  Video              Video[]
+}
+
+model UserLessonProgress {
+  userId      String
+  lessonId    Int
+  completedAt DateTime @default(now())
+  Lesson      Lesson   @relation(fields: [lessonId], references: [id])
+  User        User     @relation(fields: [userId], references: [id])
+
+  @@id([userId, lessonId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Video {
+  id                Int     @id @default(autoincrement())
+  lessonId          Int?    @unique
+  ownerId           String
+  uploadId          String  @unique
+  publicPlaybackId  String?
+  privatePlaybackId String?
+  duration          Float?
+  aspectRatio       String?
+  status            String  @default("preparing")
+  posterTime        Float?
+  Lesson            Lesson? @relation(fields: [lessonId], references: [id])
+  User              User    @relation(fields: [ownerId], references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
