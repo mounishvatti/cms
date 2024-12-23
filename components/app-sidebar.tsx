@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import {
   AudioWaveform,
@@ -25,7 +24,6 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
 const data = {
   user: {
     name: "Mounish Vatti",
@@ -59,10 +57,12 @@ const data = {
         {
           title: "Configure role",
           url: "#",
+          key: "Configure-roles",
         },
         {
           title: "Manage users",
           url: "#",
+          key: "Manage-users",
         }
       ],
     },
@@ -72,20 +72,24 @@ const data = {
       icon: BookOpen,
       items: [
         {
-          title: "Courses",
+          title: "Add Courses",
           url: "#",
+          key: "Add-course",
         },
         {
-          title: "Lessons",
+          title: "Update Courses",
           url: "#",
+          key: "Update-course",
         },
         {
-          title: "Tutorials",
+          title: "Delete Courses",
           url: "#",
+          key: "Delete-course",
         },
         {
           title: "Blogs",
           url: "#",
+          key: "blogs",
         },
       ],
     },
@@ -97,32 +101,36 @@ const data = {
         {
           title: "General",
           url: "#",
+          key: "general",
         },
         {
           title: "Team",
           url: "#",
+          key: "team",
         },
         {
           title: "Billing",
           url: "#",
+          key: "billing",
         },
         {
           title: "Limits",
           url: "#",
+          key: "limits",
         },
       ],
     },
   ]
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({onFunctionSelect, ...props }: React.ComponentProps<typeof Sidebar> & { onFunctionSelect: (key: string) => void }) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+      <NavMain items={data.navMain} onFunctionSelect={onFunctionSelect} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

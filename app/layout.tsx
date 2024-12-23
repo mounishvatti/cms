@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Loading from "./loading";
 import { ToastContainer } from "react-toastify";
 import { Geist, Geist_Mono } from "next/font/google";
 import { UserProvider } from "@/store/userContext";
 import "./globals.css";
-import { set } from "zod";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

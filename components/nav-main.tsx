@@ -1,5 +1,4 @@
 "use client"
-
 import { ChevronRight, type LucideIcon } from "lucide-react"
 
 import {
@@ -20,6 +19,7 @@ import {
 
 export function NavMain({
   items,
+  onFunctionSelect,
 }: {
   items: {
     title: string
@@ -29,8 +29,10 @@ export function NavMain({
     items?: {
       title: string
       url: string
-    }[]
-  }[]
+      key: string
+    }[];
+  }[];
+  onFunctionSelect: (key: string) => void;
 }) {
   return (
     <SidebarGroup>
@@ -56,9 +58,12 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
+                        <button
+                          className="w-full text-left"
+                          onClick={() => onFunctionSelect(subItem.key)}
+                        >
                           <span>{subItem.title}</span>
-                        </a>
+                        </button>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}

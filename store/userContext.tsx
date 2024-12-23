@@ -16,15 +16,18 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRoleState] = useState("");
   const [userName, setUserName] = useState("");
+  const [token, setToken] = useState("");
 
   // Initialize from local storage on mount
   useEffect(() => {
     const storedRole = localStorage.getItem("role");
     const storedUsername = localStorage.getItem("userName");
     const storedLoginState = localStorage.getItem("isLoggedIn");
+    const storedToken = localStorage.getItem("token");
     if (storedRole) setRoleState(storedRole);
     if (storedUsername) setUserName(storedUsername);
     if (storedLoginState) setIsLoggedIn(storedLoginState === "true");
+    if (storedToken) setToken(storedToken);
   }, []);
 
   const setRole = (newRole: string) => {
@@ -41,13 +44,20 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("isLoggedIn", state.toString()); // Save to local storage
   };
 
+  const setTokenValue = (token: string) => {
+    setToken(token);
+    localStorage.setItem("token", token); // Save to local storage
+  };
+
   const clearUserData = () => {
-    setRoleState("USER");
+    setRoleState("");
     setIsLoggedIn(false);
     setUsername("");
+    setToken("");
     localStorage.removeItem("role");
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userName");
+    localStorage.removeItem("token");
   };
 
   return (

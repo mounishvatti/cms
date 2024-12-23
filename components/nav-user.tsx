@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { useUser } from "@/store/userContext";
 import {
   BadgeCheck,
   Bell,
@@ -37,11 +38,11 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
+  const { clearUserData } = useUser();
   const logout = async () => {
-    //localStorage.removeItem("role");
-    //localStorage.removeItem("isLoggedIn");
-    toast.success("Logged out successfully");
-    //window.location.href = "/"; // Redirect to the home page
+    clearUserData(); // Clear user data from the context
+    toast.success("Logged out successfully"); // Show a success message
+    window.location.href = "/"; // Redirect to the home page
   };
   return (
     <SidebarMenu>
