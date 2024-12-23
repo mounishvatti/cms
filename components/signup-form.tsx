@@ -92,6 +92,12 @@ export function SignupForm({
                                 Register your account
                             </p>
                         </a>
+                        <div className="text-center text-sm">
+              Already have an account?{" "}
+              <a href="/user/login" className="underline underline-offset-4">
+                Login
+              </a>
+            </div>
                     </div>
                     <div className="flex flex-col gap-6">
                         <div className="grid gap-2">
