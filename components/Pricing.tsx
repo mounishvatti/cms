@@ -1,3 +1,4 @@
+"use client"
 interface Feature {
     id: string;
     attributes: {
@@ -43,7 +44,7 @@ interface Feature {
               >
                 <div
                   className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                    plan.isRecommended ? "dark:bg-blue-600" : "dark:bg-gray-800"
+                    plan.isRecommended ? "dark:bg-blue-800 border-2 border-blue-500" : "dark:bg-gray-900"
                   }`}
                 >
                   <div className="space-y-2">
@@ -53,7 +54,7 @@ interface Feature {
                       <span
                         className={`ml-1 text-sm tracking-wid ${
                           plan.isRecommended
-                            ? "dark:text-gray-900"
+                            ? "dark:text-slate-100"
                             : "dark:text-blue-500"
                         }`}
                       >
@@ -64,7 +65,7 @@ interface Feature {
                   <p
                     className={`mt-3 leading-relaxed text-lg font-bold ${
                       plan.isRecommended
-                        ? "dark:text-gray-900"
+                        ? "dark:text-slate-100"
                         : "dark:text-gray-400"
                     }`}
                   >
@@ -73,7 +74,7 @@ interface Feature {
                   <ul
                     className={`flex-1 mb-6 ${
                       plan.isRecommended
-                        ? "dark:text-gray-900 font-semibold"
+                        ? "dark:text-slate-100 font-semibold"
                         : "dark:text-gray-400"
                     }`}
                   >
@@ -85,7 +86,7 @@ interface Feature {
                           fill="currentColor"
                           className={`flex-shrink-0 w-6 h-6 ${
                             plan.isRecommended
-                              ? "dark:text-gray-900"
+                              ? "dark:text-yellow-400"
                               : "dark:text-gray-400"
                           }`}
                         >
@@ -103,8 +104,8 @@ interface Feature {
                     type="button"
                     className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                       plan.isRecommended
-                        ? "dark:bg-gray-900 dark:text-blue-400"
-                        : "dark:bg-blue-400 dark:text-gray-900"
+                        ? "dark:bg-yellow-400 border border-yellow-500 shadow-md dark:text-blue-950"
+                        : "dark:bg-blue-700 dark:text-gray-300"
                     }`}
                   >
                     Get Started

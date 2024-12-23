@@ -1,3 +1,4 @@
+"use client"
 interface QuoteProps {
     data: {
       title: string;

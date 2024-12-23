@@ -1,3 +1,5 @@
+"use client"
+
 interface VideoEmbedProps {
     id: number;
     url: string;

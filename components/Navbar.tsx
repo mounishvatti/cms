@@ -35,7 +35,7 @@ export default function Navbar() {
         <ul className="flex gap-4">
           <li>
             <Link href="/" className="underline">
-              <span className="inline-block ml-3 text-3xl font-bold text-blue-600">
+              <span className="inline-block ml-3 text-3xl font-bold text-blue-500">
                 coursera
               </span>
             </Link>
