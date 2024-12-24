@@ -65,10 +65,10 @@ export default function Navbar() {
                 <HiOutlineHome className="text-blue-200 text-md" />
               </Link>
               <Link
-                href="#"
-                className="flex items-center gap-1 text-md text-blue-100 font-normal px-2 py-1 justify-center rounded-md text-white/90 border border-blue-900"
+                href="/about-us"
+                className="flex items-center gap-1 text-md text-violet-100 font-normal px-2 py-1 justify-center rounded-md text-white/90 border border-violet-900"
               >
-                About
+                About us
                 <FcAbout className="text-blue-200 text-md" />
               </Link>
               <Link

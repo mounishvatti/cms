@@ -104,7 +104,7 @@ export default function Page() {
                 </p>
               </div>
             </div>
-            <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+            <div className="min-h-[100vh] flex-1 rounded-xl bg-slate-900 md:min-h-min">
               {views[currentView] || (
                 <p className="text-gray-600">Page not found</p>
               )}
