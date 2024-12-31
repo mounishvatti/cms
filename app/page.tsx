@@ -7,15 +7,18 @@ import Testimonials from "@/components/Testimonials";
 import FeaturesData from "@/components/data/featuresData";
 import PricingData from "@/components/data/pricingData";
 import mockTestimonialsData from "@/components/data/testimonialData";
+import { useUser } from "@/store/userContext";
 import { TypewriterEffectDemo } from "@/components/Hero";
 import { HeroParallaxDemo } from "@/components/HeroParallaxDemo";
+import CoursesContainer from "@/components/coursesContainer";
 
 export default function Home() {
+  const { isLoggedIn } = useUser();
   return (
     <div>
       <Navbar />
       <main>
-        <TypewriterEffectDemo />
+        {isLoggedIn ? <TypewriterEffectDemo /> : <CoursesContainer/>}
         <HeroParallaxDemo />
         <Features data ={FeaturesData} />
         <Pricing data={PricingData} />

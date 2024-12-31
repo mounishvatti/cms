@@ -7,11 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useUser } from "@/store/userContext";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
+  const {setLoginState} = useUser();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -41,6 +43,8 @@ export function LoginForm({
         localStorage.setItem("userName", response.data.user);
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("role", response.data.role);
+
+        //setLoginState(true);
 
         window.location.href = "/";
       } else {
