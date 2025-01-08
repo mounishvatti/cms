@@ -44,17 +44,17 @@ interface Feature {
               >
                 <div
                   className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                    plan.isRecommended ? "dark:bg-blue-800 border-2 border-blue-800 shadow-sm" : "dark:bg-gray-900"
+                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-800 bg-blue-500 border-blue-500 shadow-sm" : "dark:bg-gray-900 border border-slate-200"
                   }`}
                 >
                   <div className="space-y-2">
                     <h4 className="text-3xl font-bold mb-6">{plan.name}</h4>
-                    <span className="text-6xl font-bold ">
+                    <span className="text-6xl font-bold dark:text-white text-white">
                       {plan.price}
                       <span
                         className={`ml-1 text-sm tracking-wid ${
                           plan.isRecommended
-                            ? "dark:text-slate-100"
+                            ? "dark:text-slate-100 text-white"
                             : "dark:text-blue-500"
                         }`}
                       >
@@ -65,7 +65,7 @@ interface Feature {
                   <p
                     className={`mt-3 leading-relaxed text-lg font-bold ${
                       plan.isRecommended
-                        ? "dark:text-slate-100"
+                        ? "dark:text-slate-100 text-white"
                         : "dark:text-gray-400"
                     }`}
                   >
@@ -74,7 +74,7 @@ interface Feature {
                   <ul
                     className={`flex-1 mb-6 ${
                       plan.isRecommended
-                        ? "dark:text-slate-100 font-semibold"
+                        ? "dark:text-slate-100 text-white font-semibold"
                         : "dark:text-gray-400"
                     }`}
                   >
@@ -104,7 +104,7 @@ interface Feature {
                     type="button"
                     className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                       plan.isRecommended
-                        ? "dark:bg-yellow-400 border border-yellow-500 shadow-md dark:text-blue-950"
+                        ? "dark:bg-yellow-400 bg-yellow-400 border dark:border-yellow-500 border-yellow-500 shadow-md dark:text-blue-950"
                         : "dark:bg-blue-700 dark:text-gray-300"
                     }`}
                   >
