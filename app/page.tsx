@@ -18,7 +18,7 @@ export default function Home() {
     <div>
       <Navbar />
       <main>
-        {isLoggedIn ? <TypewriterEffectDemo /> : <CoursesContainer/>}
+        {!isLoggedIn ? <TypewriterEffectDemo /> : <CoursesContainer/>}
         <HeroParallaxDemo />
         <Features data ={FeaturesData} />
         <Pricing data={PricingData} />
