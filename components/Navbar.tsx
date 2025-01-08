@@ -91,13 +91,20 @@ export default function Navbar() {
           ) : (
             <div className="flex gap-4">
               <button
-                className="bg-blue-950 hover:bg-blue-800/30 text-blue-100 border border-blue-800 font-medium font-sans py-2 px-4 rounded"
+                className="bg-yellow-950 hover:bg-yellow-800/30 text-yellow-100 border border-yellow-800 font-medium font-sans py-2 px-4 rounded-full"
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:911935202.
+                onClick={() => router.push("/about-us")}
+              >
+                About
+              </button>
+              <button
+                className="bg-blue-950 hover:bg-blue-800/30 text-blue-100 border border-blue-800 font-medium font-sans py-2 px-4 rounded-full"
                 onClick={handleSignIn}
               >
                 Login
               </button>
               <button
-                className="bg-green-950 hover:bg-green-800/30 text-green-100 border border-green-800 font-medium font-sans py-2 px-4 rounded"
+                className="bg-green-950 hover:bg-green-800/30 text-green-100 border border-green-800 font-medium font-sans py-2 px-4 rounded-full"
                 onClick={handleSignUp}
               >
                 Sign up for free

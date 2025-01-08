@@ -44,7 +44,7 @@ interface Feature {
               >
                 <div
                   className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-800 bg-blue-500 border-blue-500 shadow-sm" : "dark:bg-gray-900 border border-slate-200"
+                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-500 bg-blue-500 border-blue-500 shadow-sm" : "dark:bg-gray-900 border border-slate-200"
                   }`}
                 >
                   <div className="space-y-2">
