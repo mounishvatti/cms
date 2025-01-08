@@ -10,8 +10,7 @@ import mockTestimonialsData from "@/components/data/testimonialData";
 import { useUser } from "@/store/userContext";
 import { TypewriterEffectDemo } from "@/components/Hero";
 import { HeroParallaxDemo } from "@/components/HeroParallaxDemo";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import MovingCardsData from "@/components/data/movingCardsData";
+import { InfiniteMovingCardsDemo } from "@/components/MovingCards";
 import CoursesContainer from "@/components/coursesContainer";
 
 export default function Home() {
@@ -24,8 +23,8 @@ export default function Home() {
         <HeroParallaxDemo />
         <Features data ={FeaturesData} />
         <Pricing data={PricingData} />
-        <Testimonials data={mockTestimonialsData} />
-        <InfiniteMovingCards items={MovingCardsData}/>
+        {/* <Testimonials data={mockTestimonialsData} /> */}
+        <InfiniteMovingCardsDemo />
       </main>
       <footer className="position-fixed bottom-0 w-full">
         <Footer />
