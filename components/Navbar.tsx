@@ -8,7 +8,7 @@ import { RiAdminFill } from "react-icons/ri";
 import { IoBookOutline } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
 import { useUser } from "@/store/userContext";
-
+import { ModeToggle } from "@/components/mode-toogle";
 export default function Navbar() {
   const { username, isLoggedIn, role, clearUserData } = useUser();
   const router = useRouter();
@@ -90,21 +90,22 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex gap-4">
+              <ModeToggle />
               <button
-                className="bg-yellow-950 hover:bg-yellow-800/30 text-yellow-100 border border-yellow-800 font-medium font-sans py-2 px-4 rounded-full"
+                className="dark:bg-yellow-950 hover:bg-yellow-800/30 dark:text-yellow-100 text-yellow-800 border border-yellow-800 font-medium font-sans py-2 px-4 rounded-full"
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:911935202.
                 onClick={() => router.push("/about-us")}
               >
                 About
               </button>
               <button
-                className="bg-blue-950 hover:bg-blue-800/30 text-blue-100 border border-blue-800 font-medium font-sans py-2 px-4 rounded-full"
+                className="dark:bg-blue-950 hover:bg-blue-800/30 dark:text-blue-100 text-blue-800 border border-blue-800 font-medium font-sans py-2 px-4 rounded-full"
                 onClick={handleSignIn}
               >
                 Login
               </button>
               <button
-                className="bg-green-950 hover:bg-green-800/30 text-green-100 border border-green-800 font-medium font-sans py-2 px-4 rounded-full"
+                className="dark:bg-green-950 hover:bg-green-800/30 dark:text-green-100 border dark:border-green-800 border-black font-medium font-sans py-2 px-4 rounded-full"
                 onClick={handleSignUp}
               >
                 Sign up for free
