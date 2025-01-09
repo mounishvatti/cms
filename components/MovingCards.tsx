@@ -7,8 +7,8 @@ import MovingCardsData from "@/components/data/movingCardsData";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <p className="text-2xl font-bold py-10">
-      Hear from some of our happy clients about their experiences with us.
+      <p className="text-4xl font-bold py-10">
+      Hear from some of our happy clients about their experiences with us
       </p>
       <InfiniteMovingCards
         items={MovingCardsData}

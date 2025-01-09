@@ -9,6 +9,7 @@ import PricingData from "@/components/data/pricingData";
 import mockTestimonialsData from "@/components/data/testimonialData";
 import { useUser } from "@/store/userContext";
 import { TypewriterEffectDemo } from "@/components/Hero";
+import { GridBackgroundDemo } from "@/components/GridBackground";
 import { HeroParallaxDemo } from "@/components/HeroParallaxDemo";
 import { InfiniteMovingCardsDemo } from "@/components/MovingCards";
 import CoursesContainer from "@/components/coursesContainer";
