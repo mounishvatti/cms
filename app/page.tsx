@@ -23,7 +23,7 @@ export default function Home() {
         <HeroParallaxDemo />
         <Features data ={FeaturesData} />
         <Pricing data={PricingData} />
-        {/* <Testimonials data={mockTestimonialsData} /> */}
+        <Testimonials data={mockTestimonialsData} />
         <InfiniteMovingCardsDemo />
       </main>
       <footer className="position-fixed bottom-0 w-full">

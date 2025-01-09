@@ -11,9 +11,9 @@ const PricingData = {
         isRecommended: false,
         product_features: {
           data: [
-            { id: "feature-1", attributes: { name: "Feature 1 of Basic" } },
-            { id: "feature-2", attributes: { name: "Feature 2 of Basic" } },
-            { id: "feature-3", attributes: { name: "Feature 3 of Basic" } },
+            { id: "feature-1", attributes: { name: "Access to recorded courses" } },
+            { id: "feature-2", attributes: { name: "Assignment driven" } },
+            { id: "feature-3", attributes: { name: "Online Certification" } },
           ],
         },
       },
@@ -26,9 +26,9 @@ const PricingData = {
         isRecommended: true,
         product_features: {
           data: [
-            { id: "feature-3", attributes: { name: "Feature 1 of Pro" } },
-            { id: "feature-4", attributes: { name: "Feature 2 of Pro" } },
-            { id: "feature-5", attributes: { name: "Feature 3 of Pro" } },
+            { id: "feature-3", attributes: { name: "TA support" } },
+            { id: "feature-4", attributes: { name: "Access to live cohorts" } },
+            { id: "feature-5", attributes: { name: "Community driven" } },
           ],
         },
       },
@@ -41,10 +41,10 @@ const PricingData = {
         isRecommended: false,
         product_features: {
           data: [
-            { id: "feature-6", attributes: { name: "Feature 1 of Enterprise" } },
-            { id: "feature-7", attributes: { name: "Feature 2 of Enterprise" } },
-            { id: "feature-8", attributes: { name: "Feature 3 of Enterprise" } },
-            { id: "feature-9", attributes: { name: "Feature 4 of Enterprise" } },
+            { id: "feature-6", attributes: { name: "Highly customizable" } },
+            { id: "feature-7", attributes: { name: "Realtime feedback" } },
+            { id: "feature-8", attributes: { name: "Hands-on exercises" } },
+            { id: "feature-9", attributes: { name: "24/7 community support" } },
           ],
         },
       },

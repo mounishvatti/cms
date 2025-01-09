@@ -44,18 +44,26 @@ interface Feature {
               >
                 <div
                   className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-500 bg-blue-500 border-blue-500 shadow-sm" : "dark:bg-gray-900 border border-slate-200"
+                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-500 bg-blue-600 border-blue-600 shadow-xl" : "dark:bg-gray-900 border border-slate-100"
                   }`}
                 >
-                  <div className="space-y-2">
+                  <div className="space-y-2 font-sans">
                     <h4 className="text-3xl font-bold mb-6">{plan.name}</h4>
-                    <span className="text-6xl font-bold dark:text-white text-white">
-                      {plan.price}
+                    <span className="text-6xl font-bold dark:text-white text-black/70">
+                    <span
+                        className={`${
+                          plan.isRecommended
+                            ? "dark:text-slate-100 text-white"
+                            : "dark:text-blue-500 text-black/60"
+                        }`}
+                      >
+                        ₹{plan.price}
+                      </span>
                       <span
                         className={`ml-1 text-sm tracking-wid ${
                           plan.isRecommended
                             ? "dark:text-slate-100 text-white"
-                            : "dark:text-blue-500"
+                            : "dark:text-blue-500 text-black/40"
                         }`}
                       >
                         {plan.pricePeriod.toLowerCase()}
@@ -66,7 +74,7 @@ interface Feature {
                     className={`mt-3 leading-relaxed text-lg font-bold ${
                       plan.isRecommended
                         ? "dark:text-slate-100 text-white"
-                        : "dark:text-gray-400"
+                        : "dark:text-gray-400 text-black/50"
                     }`}
                   >
                     {plan.description}
@@ -104,8 +112,8 @@ interface Feature {
                     type="button"
                     className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                       plan.isRecommended
-                        ? "dark:bg-yellow-400 bg-yellow-400 border dark:border-yellow-500 border-yellow-500 shadow-md dark:text-blue-950"
-                        : "dark:bg-blue-700 dark:text-gray-300"
+                        ? "dark:bg-yellow-400 bg-yellow-400 border dark:border-yellow-500 border-yellow-500 hover:border-yellow-900 shadow-md dark:text-blue-950"
+                        : "dark:bg-blue-700 bg-white border border-gray-300 dark:text-gray-300 text-gray-500 hover:border-gray-700 hover:text-gray-700"
                     }`}
                   >
                     Get Started

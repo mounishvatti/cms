@@ -29,8 +29,8 @@ function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
     const imageUrl = picture.data?.attributes.url;
   return (
     <div className="flex flex-col items-center mx-12 lg:mx-0">
-      <div className="flex items-center">
-        <div className="my-6">
+      <div className="flex items-center my-8">
+        {/* <div className="my-6">
           <Image
             src={imageUrl ?? ""}
             alt={picture.data?.attributes.alternativeText || "none provided"}
@@ -38,7 +38,7 @@ function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
             width={200}
             height={200}
           />
-        </div>
+        </div> */}
       </div>
       <div className="relative text-center">
         <svg
@@ -74,7 +74,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
         <h1 className="text-4xl font-semibold leading-none text-center">
           {data.title}
         </h1>
-        <p className="mt-4 text-lg text-center">{data.description}</p>
+        <p className="mt-4 text-md text-center">{data.description}</p>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
         {data.testimonials.map((testimonial: Testimonial, index: number) => (
