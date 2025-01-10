@@ -1,9 +1,13 @@
+import Navbar from "@/components/Navbar"
+
 export default function AboutUs() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center gap-6 p-2 md:p-10">
-            <div className="flex w-full max-w-lg flex-col gap-4">
-                <h1 className="text-3xl font-bold text-blue-100">About Us</h1>
-                <p className="text-gray-600">
+        <>
+        <Navbar />
+        <div className="flex flex-col items-center justify-center p-2 md:p-10">
+            <div className="flex w-full max-w-3xl flex-col gap-4">
+                <h1 className="text-3xl font-bold dark:text-blue-100">About Us</h1>
+                <p className="dark:text-gray-400 text-gray-500">
                     Welcome to Coursera – your destination for transforming
                     aspirations into achievements through world-class education!
 
@@ -25,5 +29,6 @@ export default function AboutUs() {
                 </p>
             </div>
         </div>
+        </>
     );
 }
