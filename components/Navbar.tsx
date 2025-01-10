@@ -46,7 +46,27 @@ export default function Navbar() {
         </ul>
 
         <div className="text-right text-sm flex items-center gap-4">
-        <ModeToggle />
+          <ModeToggle />
+          <Link
+            href="/"
+            className="flex items-center gap-1 text-md dark:text-blue-300 text-blue-800 font-normal px-2 py-1 justify-center rounded-md"
+          >
+            <HiOutlineHome className="dark:text-blue-200 text-xl" />
+          </Link>
+          <Link
+            href="#"
+            className="flex items-center gap-1 text-md dark:text-yellow-100 font-normal font-sans px-2 py-1 justify-center rounded-md border border-yellow-900 shadow-sm"
+          >
+            Explore courses
+            <IoBookOutline className="dark:text-yellow-200 text-md" />
+          </Link>
+          <Link
+            href="/about-us"
+            className="flex items-center gap-1 text-md dark:text-violet-100 text-blue-800 font-normal font-sans px-2 py-1 justify-center rounded-md border border-blue-900 shadow-sm"
+          >
+            About
+            <FcAbout className="text-blue-200 text-md" />
+          </Link>
           {isLoggedIn ? (
             <div className="text-slate-200 flex items-center gap-4">
               {role === "ADMIN" && (
@@ -58,20 +78,6 @@ export default function Navbar() {
                   <RiAdminFill className="text-orange-300 text-md" />
                 </Link>
               )}
-              <Link
-                href="/"
-                className="flex items-center gap-1 text-md text-blue-300 font-normal px-2 py-1 justify-center rounded-md text-white/90 border border-blue-900"
-              >
-                Home
-                <HiOutlineHome className="text-blue-200 text-md" />
-              </Link>
-              <Link
-                href="/about-us"
-                className="flex items-center gap-1 text-md text-violet-100 font-normal px-2 py-1 justify-center rounded-md text-white/90 border border-violet-900"
-              >
-                About us
-                <FcAbout className="text-blue-200 text-md" />
-              </Link>
               <Link
                 href="#"
                 className="flex items-center gap-1 text-md text-green-100 font-normal px-2 py-1 justify-center rounded-md text-white/90 border border-green-900"
@@ -91,21 +97,21 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex gap-4">
-              <button
-                className="dark:bg-yellow-950 hover:bg-yellow-800/30 dark:text-yellow-100 text-yellow-800 border border-yellow-800 font-medium font-sans py-2 px-4 rounded-lg shadow-md"
+              {/* <button
+                className="dark:bg-yellow-950 hover:bg-yellow-800/30 dark:text-yellow-100 text-yellow-800 border border-yellow-800 font-medium font-sans py-2 px-4 rounded-lg shadow-sm"
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:911935202.
                 onClick={() => router.push("/about-us")}
               >
                 About
-              </button>
+              </button> */}
               <button
-                className="dark:bg-blue-950 hover:bg-blue-800/30 dark:text-blue-100 text-blue-800 border border-blue-800 font-medium font-sans py-2 px-4 rounded-lg shadow-md"
+                className="dark:bg-blue-950 hover:bg-blue-800/30 dark:text-blue-100 text-slate-900 border border-slate-800 font-normal font-sans py-1 px-3 rounded-md shadow-sm"
                 onClick={handleSignIn}
               >
                 Login
               </button>
               <button
-                className="dark:bg-green-950 hover:bg-green-800/30 dark:text-green-100 text-green-700 border dark:border-green-800 border-green-700 border-black font-medium font-sans py-2 px-4 rounded-lg shadow-md"
+                className="dark:bg-green-950 bg-green-100 hover:bg-green-800/30 dark:text-green-100 text-green-900 border dark:border-green-800 border-green-800 border-black font-normal font-sans py-1 px-3 rounded-md shadow-sm"
                 onClick={handleSignUp}
               >
                 Sign up for free
