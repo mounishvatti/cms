@@ -44,7 +44,7 @@ interface Feature {
               >
                 <div
                   className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-500 bg-blue-600 border-blue-600 shadow-xl" : "dark:bg-gray-900 border border-slate-100"
+                    plan.isRecommended ? "dark:bg-blue-800 border-2 dark:border-blue-700 bg-blue-600 border-blue-600 shadow-xl" : "dark:bg-gray-900 border-2 border-slate-800"
                   }`}
                 >
                   <div className="space-y-2 font-sans">
@@ -112,8 +112,8 @@ interface Feature {
                     type="button"
                     className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                       plan.isRecommended
-                        ? "dark:bg-yellow-400 bg-yellow-400 border dark:border-yellow-500 border-yellow-500 hover:border-yellow-900 shadow-md dark:text-blue-950"
-                        : "dark:bg-blue-700 bg-white border border-gray-300 dark:text-gray-300 text-gray-500 hover:border-gray-700 hover:text-gray-700"
+                        ? "dark:bg-yellow-400 bg-yellow-400 border-2 dark:border-yellow-500 border-yellow-500 hover:border-yellow-900 shadow-md dark:text-blue-950"
+                        : "dark:bg-blue-700 bg-white border-2 dark:border-blue-600 border-gray-300 dark:text-gray-300 text-gray-500 hover:border-gray-700 hover:text-gray-700"
                     }`}
                   >
                     Get Started
