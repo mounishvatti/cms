@@ -3,6 +3,10 @@ import bcrypt from "bcrypt";
 import { z } from "zod";
 import { prisma } from "@/prisma/prismaClient"; 
 
+import { Resend } from 'resend';
+
+const resend = new Resend('re_crjN87Fq_Lb7c1rRM9HSqdYEuoxydYtnF');
+
 const signupSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email({ message: "Invalid email address" }),
@@ -38,7 +42,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         password: hashedPassword,
       },
     });
-
+    try{
+      resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'signupData.email',
+        subject: `Hello ${signupData.name}`,
+        html: '<p>Thank you for signing up!</p>'
+      });
+    } catch{
+      console.log("error sending email");
+    }
     // Respond with success message
     return res.status(201).json({
       message: "Account created successfully"
