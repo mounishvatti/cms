@@ -1,8 +1,10 @@
 "use server";
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/prisma/prismaClient";
+import { Resend } from "resend";
 import { z } from "zod";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const updateEmailSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -61,6 +63,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             data: {
                 email: updateEmailData.newemail,
             },
+        });
+
+        // Send notification email about the password change
+        await resend.emails.send({
+            from: "support@yourdomain.com",
+            to: user.email || updateEmailData.email,
+            subject: "Your email has been changed",
+            html:
+                "<p>Your email was updated to " + updateEmailData.newemail + ". If this was not you, please contact support at support@yourdomain.com immediately.</p>",
         });
 
         res.status(200).json({ message: "Email updated successfully" });

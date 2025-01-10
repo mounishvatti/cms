@@ -15,7 +15,7 @@ const limiter = rateLimit({
     message: "Too many password update attempts. Please try again later.",
 });
 
-// Validation schema for login input
+// Validation schema for password update input
 const updatePasswordSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
     oldPassword: z.string(),
