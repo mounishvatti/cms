@@ -49,12 +49,6 @@ export default function Navbar() {
 
         <div className="text-right text-sm flex items-center gap-4">
           <Link
-            href="/"
-            className="flex items-center gap-1 text-md dark:text-blue-300 text-blue-800 font-normal px-2 py-1 justify-center rounded-md"
-          >
-            <HiOutlineHome className="dark:text-blue-200 text-xl" />
-          </Link>
-          <Link
             href="/explore-courses"
             className="flex items-center gap-1 text-md dark:text-yellow-100 font-normal font-sans px-2 py-1 justify-center rounded-md border border-yellow-900 shadow-sm"
           >
@@ -88,12 +82,14 @@ export default function Navbar() {
                   <IoBookOutline className="text-green-200 text-md" />
                 </Link>
                 <ProfileDropdownMenu user_name={username} />
-                {/* <button
+                {
+                  /* <button
                   className="bg-red-950 border border-red-800 hover:bg-red-800/30 text-red-500 text-md font-sans py-1 px-3 rounded-lg"
                   onClick={handleLogout}
                 >
                   Logout
-                </button> */}
+                </button> */
+                }
               </div>
             )
             : (
@@ -120,7 +116,13 @@ export default function Navbar() {
                 </button>
               </div>
             )}
-            <ModeToggle />
+          <Link
+            href="/"
+            className="flex items-center gap-1 text-md dark:text-blue-300 text-blue-800 font-normal px-2 py-1 justify-center rounded-md"
+          >
+            <HiOutlineHome className="dark:text-blue-200 text-xl" />
+          </Link>
+          <ModeToggle />
         </div>
       </nav>
     </>
