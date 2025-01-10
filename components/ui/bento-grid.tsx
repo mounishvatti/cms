@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 export const BentoGrid = ({
   className,
   children,
@@ -22,20 +23,29 @@ export const BentoGrid = ({
 export const BentoGridItem = ({
   className,
   title,
+  url,
   description,
   header,
   icon,
 }: {
   className?: string;
   title?: string | React.ReactNode;
+  url?: string;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
 }) => {
+  const router = useRouter();
+  const handleNavigation = () => {
+    if (url) {
+      router.push(url); // Navigate to the URL
+    }
+  };
   return (
     <div
+      onClick={handleNavigation}
       className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent cursor-pointer justify-between flex flex-col space-y-4",
         className
       )}
     >

@@ -1,3 +1,4 @@
+"use client"
 import { CarouselSize } from "@/components/userCourses";
 
 export default function CoursesContainer() {
