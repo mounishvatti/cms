@@ -54,7 +54,7 @@ export default function Navbar() {
             <HiOutlineHome className="dark:text-blue-200 text-xl" />
           </Link>
           <Link
-            href="#"
+            href="/explore-courses"
             className="flex items-center gap-1 text-md dark:text-yellow-100 font-normal font-sans px-2 py-1 justify-center rounded-md border border-yellow-900 shadow-sm"
           >
             Explore courses
