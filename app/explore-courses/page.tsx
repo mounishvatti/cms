@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { BentoGridDemo } from "@/components/explore-courses";
 import Navbar from "@/components/Navbar";

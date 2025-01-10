@@ -105,6 +105,16 @@ model Video {
   User              User    @relation(fields: [ownerId], references: [id])
 }
 
+model confirmationCode {
+  id        Int      @id @default(autoincrement())
+  oldemail     String   @unique
+  newemail     String   @unique
+  code      String
+  expiresAt DateTime
+
+  @@index([newemail])
+}
+
 enum Role {
   USER
   ADMIN
