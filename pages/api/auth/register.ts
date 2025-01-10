@@ -5,7 +5,7 @@ import { prisma } from "@/prisma/prismaClient";
 
 import { Resend } from 'resend';
 
-const resend = new Resend('re_crjN87Fq_Lb7c1rRM9HSqdYEuoxydYtnF');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const signupSchema = z.object({
   name: z.string().min(1, "Name is required"),
