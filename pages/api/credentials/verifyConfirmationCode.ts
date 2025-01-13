@@ -67,7 +67,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         // Send notification email about the password change
         await resend.emails.send({
-            from: "support@yourdomain.com",
+            from: "service.cmsonline@gmail.com",
             to: user.email || updateEmailData.email,
             subject: "Your email has been changed",
             html:

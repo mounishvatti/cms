@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import bcrypt from "bcrypt";
 import { z } from "zod";
 import { prisma } from "@/prisma/prismaClient"; 
-
+import sendEmail from "@/pages/api/emails/sendEmail";
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -43,12 +43,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
     try{
-      resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'signupData.email',
-        subject: `Hello ${signupData.name}`,
-        html: '<p>Thank you for signing up!</p>'
-      });
+      // await resend.emails.send({
+      //   from: 'onboarding@resend.dev',
+      //   to: 'signupData.email',
+      //   subject: `Hello ${signupData.name}`,
+      //   html: '<p>Thank you for signing up!</p>'
+      // });
+      // console.log("sent mail to " + signupData.email);
+
+      await sendEmail(signupData.email, "Welcome to CMS Online", "Thank you for signing up!");
+      console.log("sent mail to " + signupData.email);
+
     } catch{
       console.log("error sending email");
     }

@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import sendEmail  from "@/pages/api/emails/sendEmail";
 
 export function SignupForm({
     className,
@@ -71,6 +72,14 @@ export function SignupForm({
         } else {
             toast.error("Please fix the errors before submitting");
         }
+        try{
+            await sendEmail(formData.email, "Welcome to CMS Online", "Thank you for signing up!");
+            toast.success("Onboarding mail sent successfully");
+        }
+        catch{
+            toast.error("Error sending onboarding mail");
+        }
+        
     };
 
     return (

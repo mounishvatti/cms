@@ -1,11 +1,22 @@
-import { Resend } from 'resend';
+import nodemailer from "nodemailer";
 
-const resend_api_key = process.env.RESEND_API_KEY;
-const resend = new Resend(resend_api_key);
+export default async function sendEmail(email: string, subject: string, body: string) {
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD,
+        },
+    });
 
-resend.emails.send({
-  from: 'onboarding@resend.dev',
-  to: 'mounishvatti2002@gmail.com',
-  subject: 'Hello World',
-  html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
-});
+    try {
+        await transporter.sendMail({
+            from: "service.cmsonline@gmail.com",
+            to: email,
+            subject: subject,
+            html: body,
+        });
+    } catch (error) {
+        console.error("Error sending email:", error);
+    }
+}
