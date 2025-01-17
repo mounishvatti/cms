@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 import { Geist, Geist_Mono } from "next/font/google";
-import { UserProvider } from "@/store/userContext";
 import { ThemeProvider } from "@/components/theme-provider"
+import { Provider } from 'react-redux';
+import store from '@/store/store';
 
 import "./globals.css";
 
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <UserProvider>
+        <Provider store={store}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -53,7 +54,7 @@ export default function RootLayout({
             />
             {children}
           </ThemeProvider>
-        </UserProvider>
+        </Provider>
       </body>
     </html>
   );
